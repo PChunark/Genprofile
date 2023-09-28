@@ -37,27 +37,33 @@ genProLargeHydro<-
     read_excel(path) %>% 
       rename_all(tolower) %>% 
       mutate(
-             # type = "largeHydro" ,
              timestamp = as.POSIXct(timestamp, format = "%d-%b-%Y %H:%M", tz = "UTC"),
-             # date = as.Date(timestamp, format = "%d-%b-%Y"),
-             # time = format(as.POSIXct(timestamp), format = "%H:%M:%S"), 
-             # year = year(timestamp),
-             # quarter = quarter(timestamp),
-             # month = month(timestamp),
-             # weekday = weekdays(timestamp),
-             # yday = yday(timestamp),
-             # day = day(timestamp),
              hour = hour(timestamp),
              minute = minute(timestamp)) %>% 
       filter(minute == "30" | minute =="0") 
-    # %>% 
-      # mutate(season = if_else(month %in%c("3","4","5"), "Summer",
-      #                         if_else(month %in% c("6","7","8","9","10"), "Rainy",
-      #                                 if_else(month %in% c("11","12","1","2"), "Winter", "Others"))),.after = "type")
     })
 
 
+genProSmallHydro<-
+  smallHydroFilePath %>% 
+  map(function (path){
+    read_excel(path) %>% 
+      rename_all(tolower) %>% 
+      mutate(
+        timestamp = as.POSIXct(timestamp, format = "%d-%b-%Y %H:%M", tz = "UTC"),
+        hour = hour(timestamp),
+        minute = minute(timestamp)) %>% 
+      filter(minute == "30" | minute =="0") 
+  })
 
-a <- genProLargeHydro %>% 
-  reduce(inner_join, by = c(colnames(.)))
-view(a)
+genProImportHydro<-
+  importHydroFilePath %>% 
+  map(function (path){
+    read_excel(path) %>% 
+      rename_all(tolower) %>% 
+      mutate(
+        timestamp = as.POSIXct(timestamp, format = "%d-%b-%Y %H:%M", tz = "UTC"),
+        hour = hour(timestamp),
+        minute = minute(timestamp)) %>% 
+      filter(minute == "30" | minute =="0") 
+  })
