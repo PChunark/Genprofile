@@ -1,5 +1,5 @@
 # Max Gen profile at Q3 2566 29 AUG 2023
-
+# 01 Wind ####
 egatWind <- c("LTKW2-N LINE   KYT-LTKW2-N (MW)")
 nonFirmWind <- c("ZZ_NCC  KEY    R1_FKW-N(MW)", 
                  "KRT-N   STN    KRT-N-NCC (MW)", 
@@ -24,6 +24,7 @@ nonFirmWind <- c("ZZ_NCC  KEY    R1_FKW-N(MW)",
                  "WC-N    STN    WC-N_GEN (MW)",
                  "BCHD-N  STN    BCHD-N_GEN (MW)")
 
+# 02 Solar ####
 # ยังไม่ profile ของ ผาบองโซล่า as of 29 Sep 2023
 egatSolar <- c("ZZ_NCC  KEY    R1_TSK-PV(MW)",
                "ZZ_NCC  CAL    SRD-PV3(MW)")
@@ -38,12 +39,16 @@ sppNonFirmSolar <- c("ZZ_NCC  KEY    R1_NED-N(MW)",
                      "SPP6    STN    SPP6-NCC (MW)",
                      "EAP-N   STN    EAP-N-NCC (MW)")
 
+# 03 Waste (industrial waste) ####
 sppNonFirmWaste <- c("TPI-N1  STN    TPI-N1-NCC (MW)",
                      "TPI-N2  STN    TPI-N2-NCC (MW)",
                      "TPI-N3  STN    TPI-N3-NCC (MW)")
 
+# 04 Biogas ####
 sppNonFirmBiogas <- c("ZZ_NCC  KEY    R4_UACE-N(MW)")
 
+# 05 Biomass ####
+## 05.1 Paddy husk ####
 sppFirmPaddyHusk <- c("TPS     STN    TPS-NCC (MW)",
                       "ZZ_NCC  KEY    BMP(MW)",
                       "RE1     STN    GPP-NCC(MW)",
@@ -52,6 +57,7 @@ sppFirmPaddyHusk <- c("TPS     STN    TPS-NCC (MW)",
                       "MGB     STN    MGB-NCC (MW)",
                       "ACES-F  STN    ACES-F_GEN (MW)")
 
+## 05.2 Bagasse ####
 sppFirmBagasse <- c("DCB     STN    DCB-NCC (MW)",
                     "MP1     STN    MP1 (MW)",
                     "KKS     STN    KKS-NCC(MW)",
@@ -79,7 +85,7 @@ sppNonFirmBagasse <- c("SRY-N   STN    GEN (MW)",
                        "ZZ_NCC  KEY    R1_ESE2-N(MW)",
                        "MPBL-N1 STN    GEN (MW)",
                        "RPBP2-N STN    GEN (MW)")
-
+## 05.3 Biomass (not specify) ####
 sppFirmBiomass <- c("SMP     STN    AA#1-NCC (MW)",
                     "BYBP-F  STN    BYBP-F_GEN (MW)",
                     "UTGP-F  STN    GEN (MW)",
@@ -88,15 +94,20 @@ sppFirmBiomass <- c("SMP     STN    AA#1-NCC (MW)",
                     "KI-F    STN    KI-F_GEN (MW)",
                     "TSH-F   STN    GEN (MW)")
 
+## 05.4 Parawood (scrap) ####
 sppFirmParawood <- c("YLG-F   GEN    GEN#1 (NMW)")
 
 sppNonFirmParawood <- c("GCG-N   STN    GEN (MW)",
                         "PTNG-N  STN    GEN (MW)")
 
+## 05.5 Palm ####
 sppFirmPalm <- c("SRT     STN    SGEC-PEA(MW)")
 
+## 05.6 Waste gas ####
 sppNonFirmWasteGas <- c("ZZ_NCC  KEY    R1_TCB-N(MW)")
 
+## 05.7 Mini Hydro ####
 sppNonFirmHydro <- c("ZZ_NCC  CAL    R1_DEDE-N(MW)")
 
+## 05.8 Black Liquor ####
 sppFirmBlackLiquor <- c("SMP     STN    AA#2-NCC (MW)")
