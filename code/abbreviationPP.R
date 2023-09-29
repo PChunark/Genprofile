@@ -44,9 +44,6 @@ sppNonFirmWaste <- c("TPI-N1  STN    TPI-N1-NCC (MW)",
                      "TPI-N2  STN    TPI-N2-NCC (MW)",
                      "TPI-N3  STN    TPI-N3-NCC (MW)")
 
-# 04 Biogas ####
-sppNonFirmBiogas <- c("ZZ_NCC  KEY    R4_UACE-N(MW)")
-
 # 05 Biomass ####
 ## 05.1 Paddy husk ####
 sppFirmPaddyHusk <- c("TPS     STN    TPS-NCC (MW)",
@@ -103,11 +100,11 @@ sppNonFirmParawood <- c("GCG-N   STN    GEN (MW)",
 ## 05.5 Palm ####
 sppFirmPalm <- c("SRT     STN    SGEC-PEA(MW)")
 
-## 05.6 Waste gas ####
+#6 Waste gas ####
 sppNonFirmWasteGas <- c("ZZ_NCC  KEY    R1_TCB-N(MW)")
 
-## 05.7 Mini Hydro ####
+#7 Mini Hydro ####
 sppNonFirmHydro <- c("ZZ_NCC  CAL    R1_DEDE-N(MW)")
 
-## 05.8 Black Liquor ####
+#8 Black Liquor ####
 sppFirmBlackLiquor <- c("SMP     STN    AA#2-NCC (MW)")
