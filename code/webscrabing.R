@@ -3,15 +3,16 @@ library(tidyverse)
 library(xml2) #work with xml file
 library(glue)
 
-month <- 8
+month <- paste0("0","8")
 year <- 2023
 
-url <- glue("http://control.egat.co.th/GetNetGen/default.aspx?d={month}/{2023}")
+url <- glue("http://control.egat.co.th/GetNetGen/default.aspx?d={month}/{year}")
 
-xpath <- '//*[@id="GridView1"]/tbody'
+xpath <- "/html/body/form"
 
-url %>% 
+loadProfile <-
+  url %>% 
   read_html() %>% 
-  html_nodes(xpath = xpath) %>% 
+  html_element(xpath = xpath) %>% 
   html_table()
 
