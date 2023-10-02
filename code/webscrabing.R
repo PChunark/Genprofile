@@ -16,3 +16,8 @@ loadProfile <-
   html_element(xpath = xpath) %>% 
   html_table()
 
+loadProfile %>% 
+  rename_all(tolower) %>% 
+  mutate(timestamp = as.POSIXct(timestamp, format = "%e-%b-%Y %H:%M:%S", tz = "UTC"),
+         hour = hour(timestamp),
+         minute = minute(timestamp))
