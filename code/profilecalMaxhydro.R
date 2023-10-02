@@ -1,5 +1,5 @@
 source("code/loaddata.R")
-
+library(writexl)
 
 genProLargeHydro <-
   genProLargeHydro %>% 
@@ -32,8 +32,10 @@ genProAllHydro<-
   pivot_longer(-c(timestamp,quarter), names_to = "pp", values_to = "mw") %>% 
     filter(quarter == 3,
            pp %in% c("largehydro","smallhydro", "importhydro")) %>%
-  pivot_wider(names_from = pp, values_from = mw) %>% 
-  mutate(allhydro = select(., !c(timestamp, quarter)) %>% rowSums(., na.rm = T))   
+  pivot_wider(names_from = pp, values_from = mw) %>%
+  mutate(hydrothai = largehydro + smallhydro) %>% 
+  mutate(allhydro = select(., !c(timestamp, quarter, largehydro,smallhydro)) %>% rowSums(., na.rm = T)) 
+  
 
 ## plot all hydro profile ####  
   genProAllHydro %>% 
@@ -44,4 +46,14 @@ genProAllHydro<-
 ## find max value of all hydro ####
 maxHydro<-
   genProAllHydro %>% 
-  filter(allhydro == max(allhydro))
+  filter(allhydro == max(allhydro)) %>% 
+  mutate(date = as.Date(timestamp, format = "%d-%b-%Y"))
+
+
+genProMaxHydro <-
+genProAllHydro %>% 
+  mutate(date = as.Date(timestamp, format = "%d-%b-%Y")) %>% 
+  filter(date == maxHydro$date)
+
+writexl::write_xlsx(genProAllHydro, path = "processdata/genProAllHydro.xlsx")
+writexl::write_xlsx(genProMaxHydro, path = "processdata/genProMaxHydro.xlsx")
