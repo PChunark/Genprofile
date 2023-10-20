@@ -11,7 +11,7 @@ url <- glue("http://control.egat.co.th/GetNetGen/default.aspx?d={month}/{year}")
 xpath <- "/html/body/form"
 
 loadProfile <-
-  url %>% 
+  session(url) %>% 
   read_html() %>% 
   html_element(xpath = xpath) %>% 
   html_table() %>% 
@@ -44,9 +44,20 @@ a <-
   mutate(tot_3u = mac_3u + cac_3u + nec_3u + sac_3u + nac_3u,
          .after = nac_3u) 
 
-b <-
-  a %>% 
-  select(timestamp, mac) %>% 
-  filter(mac = max(mac))
+
+b<-  a %>% summarise_if(is.numeric, list(~ max(., na.rm=TRUE)))
+
+max <- list()  
+
+for (j in 1:ncol(loadProfile[[1]])){
   
-  
+  if(j>=ncol(loadProfile[[1]]))
+  {break}
+  else{
+    max[[j]] <- loadProfile[[i]] %>% 
+      select(timestamp, j+1) 
+  }
+  max[[j]] <- max[[j]] %>% 
+    filter(max[[j]][,2] == max(.[,2]))
+}
+
