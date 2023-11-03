@@ -94,7 +94,7 @@ srdprofile2022 <-
   geom_hline(yintercept = 0)+
   scale_x_datetime(date_breaks = "1 hour", date_labels = "%H:%M")+
   ThemeLine+
-  ggtitle("The 2021 Sirindhorn Hydro Power Plant gen. profile \nat <span style = 'color: red'>minimum EGAT net gen.</span> at <span style = 'color: dodgerblue'> 9,876 MW </span> on <span style = 'color: red'> 1 Jan 2021 @ 12:30 PM </span>")+
+  ggtitle("The 2021 Sirindhorn Hydro Power Plant gen. profile \nat minimum EGAT net gen. at 9,876 MW on 1 Jan 2021 @ 12:30 PM")+
   labs(x = NULL,
        y = "Electricity generation (MW)") 
 ```
@@ -109,7 +109,7 @@ srdprofile2022 <-
   geom_hline(yintercept = 0)+
   scale_x_datetime(date_breaks = "1 hour", date_labels = "%H:%M")+
   ThemeLine+
-  ggtitle("The 2022 Sirindhorn Hydro Power Plant gen. profile \nat <span style = 'color: red'>minimum EGAT net gen.</span> at <span style = 'color: dodgerblue'> 11,547.85 MW </span> on <span style = 'color: red'> 1 Jan 2022 @ 12:30 PM </span>")+
+  ggtitle("The 2022 Sirindhorn Hydro Power Plant gen. profile \nat minimum EGAT net gen. at 11,547.85 MW on 1 Jan 2022 @ 12:30 PM")+
   labs(x = NULL,
        y = "Electricity generation (MW)") 
 ```
@@ -124,7 +124,7 @@ srdprofile2022 <-
   geom_hline(yintercept = 0)+
   scale_x_datetime(date_breaks = "1 hour", date_labels = "%H:%M")+
   ThemeLine+
-  ggtitle("The 2021 Sirindhorn Hydro Power Plant gen. profile \nat <span style = 'color: red'>Peak EGAT net gen. </span> at <span style = 'color: dodgerblue'> 30,135 MW </span> on <span style = 'color: red'> 3 Apr 2021 @ 21:00 PM </span>")+
+  ggtitle("The 2021 Sirindhorn Hydro Power Plant gen. profile \nat Peak EGAT net gen. at 30,135 MW on 3 Apr 2021 @ 21:00 PM")+
   labs(x = NULL,
        y = "Electricity generation (MW)"
        ) 
@@ -140,7 +140,7 @@ srdprofile2022 <-
   geom_hline(yintercept = 0)+
   scale_x_datetime(date_breaks = "1 hour", date_labels = "%H:%M")+
   ThemeLine+
-  ggtitle("The 2022 Sirindhorn Hydro Power Plant gen. profile \nat <span style = 'color: red'>Peak EGAT net gen. </span> at <span style = 'color: dodgerblue'> 32,254.5 MW </span> on <span style = 'color: red'> 27 Apr 2022 @ 22:30 PM </span>")+
+  ggtitle("The 2022 Sirindhorn Hydro Power Plant gen. profile \nat Peak EGAT net gen. at 32,254.5 MW on 27 Apr 2022 @ 22:30 PM")+
   labs(x = NULL,
        y = "Electricity generation (MW)"
        )
