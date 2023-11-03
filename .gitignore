@@ -41,4 +41,5 @@ vignettes/*.pdf
 #Ignore download data file
 gistemp*
 
-rawdata/*.xlsx
+rawdata/
+processdata/
