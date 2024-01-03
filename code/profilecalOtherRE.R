@@ -75,4 +75,4 @@ genProREAtMaxHydro <-
   otherREProfileAtMaxHydro %>%   
   purrr::reduce(full_join, by = "time") 
 
-writexl::write_xlsx(genProREAtMaxHydro, path = "processdata/genProREAtMaxHydro.xlsx")
+writexl::write_xlsx(genProREAtMaxHydro, path = "processdata/genProREAtMaxHydroQ4_2023.xlsx")
