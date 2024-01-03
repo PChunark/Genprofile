@@ -1,3 +1,8 @@
+library(rvest) #for web scraping
+library(tidyverse)
+library(xml2) #work with xml file
+library(glue)
+
 i1 <- list()
 url <- list()
 file <- list()
@@ -7,12 +12,13 @@ for(i in 1:87) {
   file[[i]] <- paste0("Data/myExcel_", i, ".xlsx")
   # if (!file.exists(file)) download.file(url, file) 
 }
+
 year <- 2023
 i1 <- list()
 url <- list()
 loadProfile <- list()
-file <- list()
-for(i in 1:2) {
+
+for(i in 1:12) {
   i1 <- sprintf('%02d', i)
   url <- paste0("http://control.egat.co.th/GetNetGen/default.aspx?d=",i1,"/",year)
   xpath <- "/html/body/form"
@@ -47,7 +53,12 @@ for(i in 1:2) {
     mutate(tot_3u = mac_3u + cac_3u + nec_3u + sac_3u + nac_3u,
            .after = nac_3u)
   
-  writexl::write_xlsx(loadProfile[[i]], path = paste0("processdata/",i,"_",year,".xlsx"))
+  # writexl::write_xlsx(loadProfile[[i]], path = paste0("processdata/",i,"_",year,".xlsx"))
   
 }
-loadProfileAll<- reduce(merge, loadProfile)
+# Export load curve to excel files
+writexl::write_xlsx(
+loadProfile %>% 
+  reduce(full_join, by = c(colnames(.))),
+path = paste0("processdata/loadProfile","_",year,".xlsx")
+)
