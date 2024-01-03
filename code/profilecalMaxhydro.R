@@ -30,7 +30,7 @@ genProAllHydro<-
   full_join(., genProImportHydro,
             by = c("timestamp", "quarter")) %>% 
   pivot_longer(-c(timestamp,quarter), names_to = "pp", values_to = "mw") %>% 
-    filter(quarter == 3,
+    filter(quarter == 4,
            pp %in% c("largehydro","smallhydro", "importhydro")) %>%
   pivot_wider(names_from = pp, values_from = mw) %>%
   mutate(hydrothai = largehydro + smallhydro) %>% 
@@ -55,5 +55,6 @@ genProAllHydro %>%
   mutate(date = as.Date(timestamp, format = "%d-%b-%Y")) %>% 
   filter(date == maxHydro$date)
 
-writexl::write_xlsx(genProAllHydro, path = "processdata/genProAllHydro.xlsx")
-writexl::write_xlsx(genProMaxHydro, path = "processdata/genProMaxHydro.xlsx")
+writexl::write_xlsx(maxHydro, path = "processdata/maxHydroQ4_2023.xlsx")
+writexl::write_xlsx(genProAllHydro, path = "processdata/genProAllHydroQ4_2023.xlsx")
+writexl::write_xlsx(genProMaxHydro, path = "processdata/genProMaxHydroQ4_2023.xlsx")
