@@ -42,4 +42,8 @@ vignettes/*.pdf
 gistemp*
 
 rawdata/
+<<<<<<< HEAD
 processdata/
+=======
+processdata/
+>>>>>>> bef2ac3b794914d8f145b41446cc922c9f249250
