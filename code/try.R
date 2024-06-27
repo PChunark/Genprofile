@@ -6,14 +6,14 @@ library(glue)
 i1 <- list()
 url <- list()
 file <- list()
-for(i in 1:87) {
+for(i in 1:12) {
   i1[[i]] <- sprintf('%02d', i)
   url[[i]] <- paste0("http://example.com/orResultsED.cfm?MODE=exED&ED=", i1, "&EventId=31")
   file[[i]] <- paste0("Data/myExcel_", i, ".xlsx")
   # if (!file.exists(file)) download.file(url, file) 
 }
 
-year <- 2023
+year <- 2022
 i1 <- list()
 url <- list()
 loadProfile <- list()
