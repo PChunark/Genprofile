@@ -1,7 +1,7 @@
 ---
 title: "The Lamtakong dam (LTK) generation profile"
-author: "Puttipong Chunark"
-date: "July 19, 2023"
+author: "Generation System Development Planning Department"
+date: "September 20, 2024"
 output:
   html_document: default
   pdf_document: default
@@ -124,6 +124,47 @@ ltkprofile2022 <-
                           if_else(month %in% c("11","12","1","2"), "Winter", "Others"))),.after = "date")
 ```
 
+```{r ltkgenprofile2023, echo=FALSE, message=FALSE, warning=FALSE}
+ltkprofile2023 <-
+  read_excel("rawdata/LTK_01012023_31122023.xlsx") %>% 
+  rename_all(tolower) %>% 
+  mutate(timestamp = as.POSIXct(timestamp, format = "%d-%b-%Y %H:%M", tz = "UTC"),
+         date = as.Date(timestamp, format = "%d-%b-%Y"),
+         time = format(as.POSIXct(timestamp), format = "%H:%M:%S"), 
+         year = year(timestamp),
+         month = month(timestamp),
+         weekday = weekdays(timestamp),
+         yday = yday(timestamp),
+         day = day(timestamp),
+         hour = hour(timestamp),
+         minute = minute(timestamp)) %>% 
+  filter(minute == "30" | minute =="0") %>% 
+  mutate(season = if_else(month %in%c("3","4","5"), "Summer",
+                          if_else(month %in% c("6","7","8","9","10"), "Rainy",
+                          if_else(month %in% c("11","12","1","2"), "Winter", "Others"))),.after = "date")
+```
+
+```{r ltkgenprofile2024, echo=FALSE, message=FALSE, warning=FALSE}
+ltkprofile2023 <-
+  read_excel("rawdata/LTK_01012024_31122024.xlsx") %>% 
+  rename_all(tolower) %>% 
+  mutate(timestamp = as.POSIXct(timestamp, format = "%d-%b-%Y %H:%M", tz = "UTC"),
+         date = as.Date(timestamp, format = "%d-%b-%Y"),
+         time = format(as.POSIXct(timestamp), format = "%H:%M:%S"), 
+         year = year(timestamp),
+         month = month(timestamp),
+         weekday = weekdays(timestamp),
+         yday = yday(timestamp),
+         day = day(timestamp),
+         hour = hour(timestamp),
+         minute = minute(timestamp)) %>% 
+  filter(minute == "30" | minute =="0") %>% 
+  mutate(season = if_else(month %in%c("3","4","5"), "Summer",
+                          if_else(month %in% c("6","7","8","9","10"), "Rainy",
+                          if_else(month %in% c("11","12","1","2"), "Winter", "Others"))),.after = "date")
+```
+
+
 ```{r plot_ltkminegtnetgen2019, echo=FALSE, warning=FALSE, message=FALSE}
 ggplotly(
   ltkprofile2019 %>% 
@@ -191,6 +232,26 @@ ggplotly(
 ) %>%
 style(showlegend = FALSE)
 ```
+
+```{r plot_ltkminegtnetgen2023, echo=FALSE, warning=FALSE, message=FALSE}
+ggplotly(
+  ltkprofile2023 %>% 
+  filter(day == 1 & month == 1 & year == 2023) %>% 
+  ggplot(aes(x = timestamp, y = ltk_h))+
+  geom_line(aes(color = "red"),
+            show.legend = FALSE)+
+  geom_hline(yintercept = 0)+
+  scale_x_datetime(date_breaks = "1 hour", date_labels = "%H:%M")+
+  ThemeLine+
+  ggtitle("The 2023 Lamtakong Dam gen. profile \nat <span style = 'color: red'>minimum EGAT net gen.</span> at <span style = 'color: dodgerblue'> 11,547.85 MW </span> on <span style = 'color: red'> 1 Jan 2022 @ 12:30 PM </span>")+
+  labs(x = NULL,
+       y = "Electricity generation (MW)")
+) %>%
+style(showlegend = FALSE)
+```
+
+
+
 
 ```{r plot_ltkmaxegtnetgen2019, echo=FALSE, warning=FALSE, message=FALSE}
 ggplotly(
