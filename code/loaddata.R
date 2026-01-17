@@ -7,16 +7,16 @@ library("readxl")
 # 01 Create File paths ####
 largeHydroFilePath <-
   fs::dir_ls(path = "rawdata/largeHydro",
-           glob = "*2023.xlsx")
+           glob = "*2025.xlsx")
 smallHydroFilePath <-
   fs::dir_ls(path = "rawdata/smallHydro",
-             glob = "*2023.xlsx")
+             glob = "*2025.xlsx")
 importHydroFilePath <-
   fs::dir_ls(path = "rawdata/importHydro",
-             glob = "*2023.xlsx")
+             glob = "*2025.xlsx")
 maxHydroFilePath <-
-  fs::dir_ls(path = "rawdata/maxHydroQ42566",
-             glob = "*.xlsx")
+  fs::dir_ls(path = "rawdata/maxHydroQ1Q22568",
+             glob = "*2025.xlsx")
 
 # 02 Load data into list ####
 ## 02.1 Create empty file list ####
