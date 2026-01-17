@@ -1,37 +1,43 @@
-# Max Gen profile at Q3 2566 29 AUG 2023
+# Max Gen profile at Q1Q2 2568 29 JUN 2025
 # 01 Wind ####
-egatWind <- c("LTKW2-N LINE   KYT-LTKW2-N (MW)")
-nonFirmWind <- c("ZZ_NCC  KEY    R1_FKW-N(MW)", 
-                 "KRT-N   STN    KRT-N-NCC (MW)", 
-                 "KWP-N   STN    KWP-N-NCC (MW)",
-                 "CYPW-N  STN    CYPW-N-NCC (MW)",
-                 "WTB-N   STN    WTB-N_GEN (MW)",
-                 "ZZ_NCC  KEY    R2_WED(MW)",
-                 "HKH1-N  STN    HKH1-N_NCC (MW)",
-                 "HKH2-N  STN    HKH2-N_NCC (MW)",
-                 "HKH3-N  STN    HKH3-N_NCC (MW)",
-                 "GNP-N   STN    GNP-N_GEN (MW)",
-                 "KWE-N   STN    KWE-N_GEN (MW)",
-                 "KRST-N  STN    KRST-N_GEN (MW)",
-                 "TPCW-N  STN    TPCW-N_NCC (MW)",
-                 "TPRW-N  STN    TPRW-N_GEN (MW)",
-                 "KSNW-N  STN    KSNW-N_GEN (MW)",
-                 "NYKD-N  STN    NYKD-N_NCC (MW)",
-                 "NYKW-N  STN    NYKW-N_NCC (MW)",
-                 "KRO-N   STN    KRO-N_GEN (MW)",
-                 "PND-N   STN    PND-N_NCC (MW)",
-                 "BJRD-N  STN    BJRD-N_NCC (MW)",
-                 "WC-N    STN    WC-N_GEN (MW)",
-                 "BCHD-N  STN    BCHD-N_GEN (MW)")
+egatWind <- c("LTKW2-N KYT-LTKW2-N")
+nonFirmWind <- c("ZZ_NCC  KEY    R1_FKW-N(MW)", # บริษัท เฟิร์ส โคราช วินด์ จำกัด
+                 "KRT-N   STN    KRT-N-NCC (MW)", #บริษัท เค.อาร์.ทู จำกัด
+                 "KWP-N   STN    KWP-N-NCC (MW)",#บริษัท เขาค้อ วินด์ พาวเวอร์ จำกัด
+                 "CYPW-N  STN    CYPW-N-NCC (MW)",#บริษัท ชัยภูมิ วินด์ฟาร์ม จำกัด
+                 "WTB-N   STN    WTB-N_GEN (MW)",# บริษัท วะตะแบก วินด์ จำกัด
+                 "ZZ_NCC  KEY    R2_WED(MW)", # บริษัท พัฒนาพลังงานลม จำกัด (โครงการวายุวินด์ฟาร์ม)
+                 "HKH1-N  STN    HKH1-N_NCC (MW)",# บริษัท อีเอ วินด์ หาดกังหัน 3 จำกัด (โครงการ 1)
+                 "HKH2-N  STN    HKH2-N_NCC (MW)",# บริษัท อีเอ วินด์ หาดกังหัน 3 จำกัด (โครงการ 2)
+                 "HKH3-N  STN    HKH3-N_NCC (MW)",# บริษัท อีเอ วินด์ หาดกังหัน 3 จำกัด (โครงการ 3)
+                 "GNP-N   STN    GNP-N_GEN (MW)", # บริษัท อีเอ วินด์ หาดกังหัน 3 จำกัด (โครงการ 3)
+                 "KWE-N   STN    KWE-N_GEN (MW)", # บริษัท โคราชวินด์เอ็นเนอร์ยี จำกัด
+                 "KRST-N  STN    KRST-N_GEN (MW)", # บริษัท เค.อาร์.เอส.ทรี จำกัด
+                 "TPCW-N  STN    TPCW-N_NCC (MW)", # บริษัท ทรอปิคอล วินด์ จำกัด
+                 "TPRW-N  STN    TPRW-N_GEN (MW)", # บริษัท เทพารักษ์ วินด์ จำกัด
+                 "KSNW-N  STN    KSNW-N_GEN (MW)", # บริษัท กฤษณา วินด์ พาวเวอร์ จำกัด
+                 "NYKD-N  STN    NYKD-N_NCC (MW)", # บริษัท นายางกลัก พัฒนา จำกัด
+                 "NYKW-N  STN    NYKW-N_NCC (MW)", # บริษัท นายางกลัก พลังลม จำกัด
+                 "KRO-N   STN    KRO-N_GEN (MW)", # บริษัท เค.อาร์.วัน จำกัด
+                 "PND-N   STN    PND-N_NCC (MW)", # บริษัท โป่งนก พัฒนา จำกัด
+                 "BJRD-N  STN    BJRD-N_NCC (MW)", # บริษัท เบญจรัตน์ พัฒนา จำกัด
+                 "WC-N    STN    WC-N_GEN (MW)", # บริษัท วินชัย จำกัด
+                 "BCHD-N  STN    BCHD-N_GEN (MW)") # บริษัท บ้านชวน พัฒนา จำกัด
 
 # 02 Solar ####
-# ยังไม่ profile ของ ผาบองโซล่า as of 29 Sep 2023
-egatSolar <- c("ZZ_NCC  KEY    R1_TSK-PV(MW)",
-               "ZZ_NCC  CAL    SRD-PV3(MW)")
+# ยังไม่ profile ของ ผาบองโซล่า as of 29 June 2025
+egatSolar <- c("ZZ_NCC  KEY    R1_TSK-PV(MW)", # ทับสะแก ชุดที่ 1
+               "ZZ_NCC  CAL    SRD-PV3(MW)", # เขื่อนสิรินธร
+               "UR-PV") # ทุ่นลอยน้ำร่วมกับโรงไฟฟ้าพลังน้ำเขื่อนอุบลรัตน์ ชุดที่ 1 
 
-sppFirmSolar <- c("SSH-F   STN    SSH-F_NCC (MW)")
+sppFirmSolar <- c("BASP-P_GEN", #บริษัท บรีซแอนด์ไชน์ เพาเวอร์ จำกัด
+                  "SLD-P_GEN", # บริษัท พัฒนาโซลาร์ จำกัด
+                  "SSH-F   STN    SSH-F_NCC (MW)") # บริษัท ซุปเปอร์ โซล่าร์ เอนเนอร์ยี จำกัด
 
-sppNonFirmSolar <- c("ZZ_NCC  KEY    R1_NED-N(MW)",
+sppNonFirmSolar <- c("STPH-NGEN (MW)", # บริษัท แสงไทยพลังงาน จำกัด
+                     "SKYP-N_GEN", # บริษัท สกาย เพาเวอร์ จำกัด
+                     "PRR-N_GEN", # บริษัท พลังงานรุ่งเรือง จำกัด
+                     "NED-N_GEN", # บริษัท พัฒนาพลังงานธรรมชาติ จำกัด
                      "ZZ_NCC  KEY    MCC_BCP-N(MW)",
                      "EAN-N   STN    EAN-N-NCC (MW)",
                      "SSP-N   STN    GEN (MW)",
